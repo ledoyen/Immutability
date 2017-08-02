@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Customizations -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides" style="width: 90%">
+            <section data-markdown="slides/01_title.md"></section>
+            <section data-markdown="slides/02_why_js.md"></section>
+            <section data-markdown="slides/03_why_java.md"></section>
+            <section data-markdown="slides/04_kiss_in_java.md"></section>
+        </div>
+        <div class="footer">
+            <p>Immutability</p>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script>
+        var editorContent = "";
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            width: '90%',
+            controls: true,
+            progress: true,
+            history: true,
+            center: false,
+            slideNumber: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            ace: {
+                mode: 'ace/mode/javascript',
+                theme: 'ace/theme/monokai',
+                autofocus: true,
+                oninit: function(editor) {
+                    editorContent = editor.getValue();
+		        },
+                onchange: function(event, editor) {
+                    editorContent = editor.getValue();
+		        }
+            },
+
+            // Optional reveal.js plugins
+            dependencies: [{
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    [].forEach.call( document.querySelectorAll( '.highlight, pre code' ), function( v, i) {
+                        hljs.highlightBlock(v);
+                    });
+                }
+            },
+            { src: 'js/reveal.js-ace.js' }
+            ]
+        });
+    </script>
+</body>
+
+</html>

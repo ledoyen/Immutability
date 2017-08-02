@@ -1,0 +1,60 @@
+/** Style customizations for this project only. */
+
+
+/* Fix Help table display */
+.viewport table {
+    color: #fff;
+}
+
+.footer{
+  position:absolute;
+  bottom: 0;
+}
+
+.reveal .footer p {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.reveal .slides {
+    margin-top: 0;
+}
+.reveal .slides > section,
+.reveal .slides > section > section {
+    padding-top: 0;
+}
+.reveal h3 {
+    color: #42affa;
+    font-size: 50px;
+    -webkit-margin-after: 20px;
+}
+.reveal p {
+    margin-top: 50px;
+}
+.reveal section > ul {
+    margin-top: 20px;
+}
+.reveal li {
+    font-size: 40px;
+}
+.reveal li li {
+    font-size: 30px;
+}
+.reveal li li li {
+    font-size: 20px;
+}
+
+.reveal .slides section .fragment.then-striked {
+  opacity: 1;
+  visibility: inherit;
+  text-decoration: line-through; }
+  .reveal .slides section .fragment.then-striked.current-fragment {
+    opacity: 1;
+    visibility: inherit;
+    text-decoration: inherit; }
+
+.console-display p {
+    font-size: 15px;
+    display: inline;
+    margin-left: 5px;
+}
